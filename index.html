@@ -71,7 +71,9 @@ function clickScan() {
 //------------------------------------------------------------------------------
 function scannerSuccess(result) {
     console.log("scannerSuccess: result: " + result)
-    resultSpan.innerText = "success: " + JSON.stringify(result)
+    resultSpan.innerText = "Directing to: " + JSON.stringify(result)
+	
+	window.location.href = "http://www.google.com";
 }
 
 //------------------------------------------------------------------------------
@@ -85,15 +87,11 @@ function scannerFailure(message) {
     </script>
   </head>
   <body onload="onBodyLoad()">
+	<div style="font-size: 18px;">Ask your hostess for a QR code to begin your DineXperience!</div>
+	
+    <button id="scan-button">Scan Code Now</button>
 
-
-    <button id="scan-button">scan something</button>
-
-    <p>scanned: <span id="scan-result">n/a</span>
-
-
-
-
+    <p><span id="scan-result">n/a</span>
   </body>
 </html>
 
