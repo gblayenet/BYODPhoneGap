@@ -10,6 +10,10 @@
     <link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
     <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
     -->
+    <link href="css/jquery.mobile-1.0.css" rel="stylesheet" type="text/css" />
+	<link href="css/jquery.mobile.structure-1.0.css" rel="stylesheet" type="text/css" />
+	<link href="css/Common.css" rel="stylesheet" type="text/css" />
+	<link href="css/Site.Mobile.css" rel="stylesheet" type="text/css" />
 
 
     <!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
@@ -54,12 +58,7 @@
 	for more details -jm */
 	function onDeviceReady()
 	{
-		// do your thing!
-		navigator.notification.alert("PhoneGap is working");
-
-    scanButton.addEventListener("click", clickScan, false);
-    createButton.addEventListener("click", clickCreate, false);
-
+		scanButton.addEventListener("click", clickScan, false);
 	}
 
 
@@ -79,7 +78,7 @@ function scannerSuccess(result) {
 //------------------------------------------------------------------------------
 function scannerFailure(message) {
     console.log("scannerFailure: message: " + message)
-    resultSpan.innerText = "failure: " + JSON.stringify(message)
+    resultSpan.innerText = "Invalid QR Code: " + JSON.stringify(message)
 }
 
 
@@ -87,11 +86,30 @@ function scannerFailure(message) {
     </script>
   </head>
   <body onload="onBodyLoad()">
-	<div style="font-size: 24px; margin-bottom: 10px;">Ask your hostess for a QR code to begin your DineXperience!</div>
-	
-    <button id="scan-button" style="font-size: 18px;">Scan Code Now</button>
+	<div data-role="page" data-theme="b">
+		<div data-role="header" data-theme="b">
+				<img src="Images/QSR_Logo_Mobile.png" style="float: left; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;" />
+				<h1>ConnectSmart DineXperience</h1>
+		</div>
+		<div data-role="content">
+			<center><div style="font-size: 24px; margin-bottom: 30px;">Ask your hostess for a QR code to begin your DineXperience!</div></center>
+			
+			<button id="scan-button" style="font-size: 48px;">Scan Code Now</button>
 
-    <p><span id="scan-result"></span>
+			<p><span id="scan-result"></span>
+        </div>
+
+        <script src="js/jquery-1.6.4.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            $(document).bind("mobileinit", function () {
+                if ($.browser.msie) {
+                    $.mobile.ajaxEnabled = false;
+                }
+            });
+        </script>
+
+        <script src="js/jquery.mobile-1.0.js" type="text/javascript"></script>
   </body>
 </html>
 
