@@ -73,7 +73,7 @@ function scannerSuccess(result) {
     console.log("scannerSuccess: result: " + result)
     resultSpan.innerText = "Directing to: " + JSON.stringify(result)
 	
-	window.location.href = "http://www.google.com";
+	window.location.href = "http://74.142.64.202/Hostess";
 }
 
 //------------------------------------------------------------------------------
@@ -87,11 +87,11 @@ function scannerFailure(message) {
     </script>
   </head>
   <body onload="onBodyLoad()">
-	<div style="font-size: 18px;">Ask your hostess for a QR code to begin your DineXperience!</div>
+	<div style="font-size: 24px; margin-bottom: 10px;">Ask your hostess for a QR code to begin your DineXperience!</div>
 	
-    <button id="scan-button">Scan Code Now</button>
+    <button id="scan-button" style="font-size: 18px;">Scan Code Now</button>
 
-    <p><span id="scan-result">n/a</span>
+    <p><span id="scan-result"></span>
   </body>
 </html>
 
