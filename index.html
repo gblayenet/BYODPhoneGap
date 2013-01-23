@@ -71,8 +71,8 @@ function clickScan() {
 function scannerSuccess(result) {
     console.log("scannerSuccess: result: " + result)
     resultSpan.innerText = "Directing to: " + JSON.stringify(result)
-	
-	window.location.href = "http://74.142.64.202/Hostess";
+	alert(result.text);
+	window.location.href = result.text;
 }
 
 //------------------------------------------------------------------------------
