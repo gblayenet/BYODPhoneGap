@@ -48,6 +48,8 @@
                 window.clearInterval(timer);
                 timer = null;
             }
+			document.getElementById("messagePanel").innerHTML = 'Thank you!'; 
+			document.getElementById("onMyWay").style.display = 'none'; 
 		}
 
 		// Beep three times
@@ -62,10 +64,6 @@
 			navigator.notification.vibrate(2000);
 		}		
 
-		function getURLParameter(name) {
-			return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
-		}
-
 		function getURLParameter(url, name) {
 			return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(url)||[,""])[1].replace(/\+/g, '%20'))||null;
 		}
@@ -78,8 +76,8 @@
 			document.getElementById("scanPanel").style.display = 'none'; 
 			document.getElementById("notifyPanel").style.display = 'block'; 
 
-			timer = window.setInterval(vibrate, 5000);
-			
+			vibrate();
+			timer = window.setInterval(vibrate, 4000);
 		}
 
 		//------------------------------------------------------------------------------
@@ -106,10 +104,12 @@
 			<div id="notifyPanel" style="display: none;">
 				<center><div style="font-size: 24px; margin-bottom: 30px;">
 					<span id="partyName"></span> party of <span id="partySize"></span>
-				</div></center>
+				</div>
 			
-				<center>
-				<span>Table is ready.  Notifying you now...</span>
+				<div id="messagePanel" style="font-size: 16px; margin-bottom: 30px;">
+					Table is ready!
+				</div>
+				</center>
 				<button id="onMyWay">On my way!</button>
 			</div>
 		</div>
