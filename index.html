@@ -60,7 +60,7 @@
 		// Beep three times
 		//
 		function playBeep() {
-			navigator.notification.beep(3);
+			navigator.notification.beep(1);
 		}
 
 		// Vibrate for 2 seconds
@@ -82,7 +82,7 @@
 			document.getElementById("notifyPanel").style.display = 'block'; 
 
 			notify();
-			timer = window.setInterval(notify, 6000);
+			timer = window.setInterval(notify, 4000);
 		}
 
 		//------------------------------------------------------------------------------
