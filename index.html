@@ -36,7 +36,8 @@
 		}
 
 		function clickScan() {
-			window.plugins.barcodeScanner.scan(scannerSuccess, scannerFailure);
+			//window.plugins.barcodeScanner.scan(scannerSuccess, scannerFailure);
+			scannerSuccess("http://test.com?partyName=Downs&partySize=4");
 		}
 
 		// Beep three times
@@ -62,7 +63,9 @@
 		//------------------------------------------------------------------------------
 		function scannerSuccess(result) {
 			console.log("scannerSuccess: result: " + result)
-			
+			alert(result.text);
+			alert(getURLParameter(result.text, "partyName"));
+			alert(getURLParameter(result.text, "partySize"));
 			document.getElementByID("partyName").innerHTML = getURLParameter(result.text, "partyName");
 			document.getElementByID("partySize").innerHTML = getURLParameter(result.text, "partySize");
 			
