@@ -49,7 +49,7 @@
                 timer = null;
             }
 			document.getElementById("messagePanel").innerHTML = 'Thank you!'; 
-			document.getElementById("onMyWay").style.display = 'none'; 
+			document.getElementById("buttonPanel").style.display = 'none';
 		}
 
 		// Beep three times
@@ -76,8 +76,8 @@
 			document.getElementById("scanPanel").style.display = 'none'; 
 			document.getElementById("notifyPanel").style.display = 'block'; 
 
-			vibrate();
-			timer = window.setInterval(vibrate, 4000);
+			playBeep();
+			timer = window.setInterval(playBeep, 4000);
 		}
 
 		//------------------------------------------------------------------------------
@@ -110,7 +110,9 @@
 					Table is ready!
 				</div>
 				</center>
+				<div id="buttonPanel">
 				<button id="onMyWay">On my way!</button>
+				</div>
 			</div>
 		</div>
 
