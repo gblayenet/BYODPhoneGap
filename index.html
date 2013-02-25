@@ -52,6 +52,11 @@
 			document.getElementById("buttonPanel").style.display = 'none';
 		}
 
+		function notify() {
+			vibrate();
+			playBeep();
+		}
+		
 		// Beep three times
 		//
 		function playBeep() {
@@ -76,8 +81,8 @@
 			document.getElementById("scanPanel").style.display = 'none'; 
 			document.getElementById("notifyPanel").style.display = 'block'; 
 
-			playBeep();
-			timer = window.setInterval(playBeep, 4000);
+			notify();
+			timer = window.setInterval(notify, 6000);
 		}
 
 		//------------------------------------------------------------------------------
