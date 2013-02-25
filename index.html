@@ -51,6 +51,7 @@
             }
 			document.getElementById("messagePanel").innerHTML = 'Thank you!'; 
 			document.getElementById("buttonPanel").style.display = 'none';
+			window.plugins.statusBarNotification.cancel();
 		}
 
 		function notify() {
