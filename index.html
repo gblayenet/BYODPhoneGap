@@ -65,12 +65,12 @@
 			alert(result.text);
 			alert(getURLParameter(result.text, "partyName"));
 			alert(getURLParameter(result.text, "partySize"));
-			document.getElementByID("partyName").innerHTML = getURLParameter(result.text, "partyName");
-			document.getElementByID("partySize").innerHTML = getURLParameter(result.text, "partySize");
-			
-			document.getElementByID("scanPanel").style.visibility = 'hidden'; 
-			document.getElementByID("notifyPanel").style.visibility = 'visible'; 
-			
+			document.getElementById("partyName").innerHTML = getURLParameter(result.text, "partyName");
+			document.getElementById("partySize").innerHTML = getURLParameter(result.text, "partySize");
+			alert("updated text");
+			document.getElementById("scanPanel").style.visibility = 'hidden'; 
+			document.getElementById("notifyPanel").style.visibility = 'visible'; 
+			alert("changed vis");
 			playBeep();
 			vibrate();
 			
